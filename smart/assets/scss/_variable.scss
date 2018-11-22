@@ -1,0 +1,76 @@
+$font-url: "../fonts/vietnamese/";
+
+// $font-url: "//c.s-microsoft.com/static/fonts/segoe-ui/vietnamese/";
+
+// Font Weight
+$font-100: 200;
+$font-200: 200;
+$font-400: 400;
+$font-600: 600;
+$font-700: 700;
+$dark-color: #000000;
+$white-color: #ffffff;
+$hover-color: #2187e7;
+
+// Box shadow
+$box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+
+// Social color
+$facebook: #3b5998;
+$twitter: #1da1f2;
+$google: #dd4b39;
+$youtube: #ff0000;
+$linkedin: #0077b5;
+$adobe: #ff0000;
+$amazon: #ff9900;
+$angular: #b52e31;
+$blogger: #f57d00;
+$fontawesome: #228ae6;
+$skype: #00aff0;
+$pinterest: #bd081c;
+$github: #333333;
+$rss: #f26522;
+$tumblr: #35465c;
+
+// Animation
+$transition: all 0.25s ease-in-out;
+
+// Media
+$max-1920: "(max-width:1920px)"; // 24"
+$max-1680: "(max-width:1680px)"; // 22"
+$max-1600: "(max-width:1600px)"; // 20"
+$max-1440: "(max-width:1440px)"; // 19"
+$max-1366: "(max-width:1366px)"; // 15"
+$max-1024: "(max-width:1024px)"; // 13"
+$max-1200: "(max-width:1200px)";
+$max-969: "(max-width:969px)";
+$max-800: "(max-width:800px)";
+$max-768: "(max-width:768px)";
+$max-736: "(max-width:736px)";
+$max-667: "(max-width:667px)";
+$max-640: "(max-width:640px)";
+$max-600: "(max-width:600px)";
+$max-568: "(max-width:568px)";
+$max-468: "(max-width:468px)";
+$max-420: "(max-width:420px)";
+$max-360: "(max-width:360px)";
+$max-320: "(max-width:320px)";
+
+$min-1920: "(min-width:1920px)"; // 24"
+$min-1680: "(min-width:1680px)"; // 22"
+$min-1600: "(min-width:1600px)"; // 20"
+$min-1440: "(min-width:1440px)"; // 19"
+$min-1366: "(min-width:1366px)"; // 15"
+$min-1024: "(min-width:1024px)"; // 13"
+$min-1200: "(min-width:1200px)";
+$min-969: "(min-width:969px)";
+$min-800: "(min-width:800px)";
+$min-768: "(min-width:768px)";
+$min-736: "(min-width:736px)";
+$min-667: "(min-width:667px)";
+$min-640: "(min-width:640px)";
+$min-600: "(min-width:600px)";
+$min-568: "(min-width:568px)";
+$min-420: "(min-width:420px)";
+$min-360: "(min-width:360px)";
+$min-320: "(min-width:320px)";
