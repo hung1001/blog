@@ -1,8 +1,145 @@
-﻿$.getScript("https://cdn.staticaly.com/gh/hung1001/blog/master/smart/lib/lazyload/lazyload.min.js").done(function() {
-  $(".posts img").lazyload({
-    placeholder: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC",
-    effect: "fadeIn",
-    threshold: "0"
+﻿let rpp = document.querySelectorAll("[data-ripple]");
+for (let e = 0; e < rpp.length; e++) rpp[e].addEventListener("mousedown", e => {
+  let t = e.currentTarget,
+    p = (t.style.position, t.offsetTop, e.pageX - t.offsetLeft),
+    l = e.pageY - t.offsetTop,
+    i = Math.min(t.offsetHeight, t.offsetWidth, 100);
+  d = document.createElement("div"), d.className = "ripple-js", t.appendChild(d), t.style.position = "relative";
+  let s = document.createElement("div");
+  s.className = "rippleWave-js", s.style.background = t.getAttribute("data-ripple"), s.style.width = `${i}px`, s.style.height = `${i}px`, s.style.left = `${p-i/2}px`, s.style.top = `${l-i/2}px`, d.appendChild(s), t.addEventListener("animationend", () => {
+    d.remove(), t.removeAttribute("style")
   })
 });
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('12 1a(a){z e=11(a.1n.1v$1x.$t,10),s="";Z=11(16/2),Z==16-Z&&(16=2*Z+1),B=h-Z,B<1&&(B=1),b=11(e/f)+1,b-1==e/f&&(b-=1),E=B+16-1,E>b&&(E=b),s+="<4 5=\'1t\'>1u "+h+"/"+b+"</4>";z t=11(h)-1;h>1&&(s+="j"==d?\'<4 5="1l 1k"><a y="\'+u+\'">\'+13+"</a></4>":\'<4 5="9 1k"><a y="/k/o/\'+A+"?&6-i="+f+\'">\'+13+"</a></4>"),h>2&&(s+=3==h?"j"==d?\'<4 5="1l"><a y="\'+u+\'">\'+17+"</a></4>":\'<4 5="9"><a y="/k/o/\'+A+"?&6-i="+f+\'">\'+17+"</a></4>":"j"==d?\'<4 5="9"><a v="R(\'+t+\');m w">\'+17+"</a></4>":\'<4 5="9"><a v="D(\'+t+\');m w">\'+17+"</a></4>"),B>1&&(s+="j"==d?\'<4 5="9"><a y="\'+u+\'">1</a></4>\':\'<4 5="9"><a y="/k/o/\'+A+"?&6-i="+f+\'">1</a></4>\'),B>2&&(s+="<4 5=\'1f\'>...</4>");1j(z p=B;p<=E;p++)s+=h==p?\'<4 5="1A">\'+p+"</4>":1==p?"j"==d?\'<4 5="9"><a y="\'+u+\'">1</a></4>\':\'<4 5="9"><a y="/k/o/\'+A+"?&6-i="+f+\'">1</a></4>\':"j"==d?\'<4 5="9"><a v="R(\'+p+\');m w">\'+p+"</a></4>":\'<4 5="9"><a v="D(\'+p+\');m w">\'+p+"</a></4>";E<b-1&&(s+="<4 5=\'1f\'>...</4>"),E<b&&(s+="j"==d?\'<4 5="9"><a v="R(\'+b+\');m w">\'+b+"</a></4>":\'<4 5="9"><a v="D(\'+b+\');m w">\'+b+"</a></4>");z r=11(h)+1;h<b-1&&(s+="j"==d?\'<4 5="9"><a v="R(\'+r+\');m w">\'+1h+"</a></4>":\'<4 5="9"><a v="D(\'+r+\');m w">\'+1h+"</a></4>"),h<b&&(s+="j"==d?\'<4 5="9 1g"><a v="R(\'+b+\');m w">\'+1b+"</a></4>":\'<4 5="9 1g"><a v="D(\'+b+\');m w">\'+1b+"</a></4>");1j(z n=1o.1L("1z"),l=1o.1B("1H-1I"),g=0;g<n.15;g++)n[g].1m=s;n&&n.15>0&&(s=""),l&&(l.1m=s)}12 1i(){z a=c;-1!=a.7("/k/o/")&&(A=-1!=a.7("?W-6")?a.U(a.7("/k/o/")+14,a.7("?W-6")):a.U(a.7("/k/o/")+14,a.7("?&6"))),-1==a.7(".1D")&&(-1==a.7("/k/o/")?(d="j",h=-1!=c.7("#C=")?c.U(c.7("#C=")+8,c.15):1,-1==a.7("q=")?$.T({O:u+"S/K/G",L:"V",Q:{P:"N-M-J","6-i":1},I:"H",F:"1a"}):$.T({O:u+"S/K/G",L:"V",Q:{P:"N-M-J",q:a.x("?")[1].x("q=")[1].x("&")[0]},I:"H",F:"1a"})):(d="o",-1==a.7("&6-i=")&&(f=1w),h=-1!=c.7("#C=")?c.U(c.7("#C=")+8,c.15):1,$.T({O:u+"S/K/G/-/"+A,L:"V",Q:{P:"N-M-J","6-i":1},I:"H",F:"1a"})))}12 R(a){X=(a-1)*f,Y=a,-1==c.7("?q=")?$.T({O:u+"S/K/G",L:"V",Q:{P:"N-M-J","6-i":1,"1c-1d":X},I:"H",F:"18"}):$.T({O:u+"S/K/G",L:"V",Q:{P:"N-M-J",q:c.x("?")[1].x("q=")[1].x("&")[0],"1c-1d":X},I:"H",F:"18"})}12 D(a){X=(a-1)*f,Y=a,$.T({O:u+"S/K/G/-/"+A,L:"V",Q:{P:"N-M-J","6-i":1,"1c-1d":X},I:"H",F:"18"})}12 18(a){1e=a.1n.1C[0];z e=1e.1p.$t.U(0,19)+1e.1p.$t.U(1E,1F),s=1G(e);1q("j"==d)1q(-1==c.7("?q="))z t="/k?W-6="+s+"&6-i="+f+"#C="+Y;1r t="/k?W-6="+s+"&q="+c.x("?")[1].x("q=")[1].x("&")[0]+"&6-i="+f+"#C="+Y;1r t="/k/o/"+A+"?W-6="+s+"&6-i="+f+"#C="+Y;1J.y=t}1s 0===13&&(13="1K"),1s 0===1b&&(1b="1y"),1i();',62,110,'||||span|class|max|indexOf||displaypageNum||lastPageNo|urlactivepage|currentPage||perPage||currentPageNo|results|page|search||return||label||||||home_page|onclick|false|split|href|var|postLabel|pageStart|PageNo|redirectlabel|pageEnd|jsonpCallback|summary|jsonp|dataType|script|posts|type|in|json|url|alt|data|redirectpage|feeds|ajax|substring|GET|updated|jsonstart|noPage|pageNumber||parseInt|function|firstText||length|numPages|prevText|finddatepost||totalcountdata|lastText|start|index|post|dot|lastpage|nextText|pagecurrentg|for|firstpage|showpage|innerHTML|feed|document|published|if|else|void|showpageOf|Page|openSearch|20|totalResults|Last|pageArea|pagecurrent|getElementById|entry|html|23|29|encodeURIComponent|blog|pager|location|First|getElementsByName'.split('|'),0,{}))
+window.addEventListener("click", e => {
+  let r = ["ts"],
+    t = !0;
+  for (var a in r) e.target.className == r[a] && (t = !1);
+  if (!t) return;
+  let l = document.querySelectorAll(".nav-share,.header #header .Label");
+  for (let e = 0; e < l.length; e++) l[e].classList.remove("shows")
+});
+Math.easeInOutQuad = function(t, e, o, a) {
+  return (t /= a / 2) < 1 ? o / 2 * t * t + e : -o / 2 * (--t * (t - 2) - 1) + e
+};
+var scrollTo = (t, e, o) => {
+  let a = t.scrollTop,
+    l = e - a,
+    u = 0;
+  var n = function() {
+    u += 20;
+    let e = Math.easeInOutQuad(u, a, l, o);
+    t.scrollTop = e, u < o && setTimeout(n, 20)
+  };
+  n()
+};
+window.addEventListener("load", () => {
+  cle("btt", "click", e => {
+    scrollTo((document.documentElement || document.body.parentNode || document.body), 0, 800);
+  })
+  cle("tg", "click", e => {
+    e.stopPropagation();
+    document.querySelector(".header #header .Label").classList.toggle("shows");
+  });
+  fetch(`/feeds/comments/summary?alt=json&max-results=${numComments}`).then(b => b.json()).then(b => {
+    let f, h, j, k, o, p;
+    for (let q = 0; q < b.feed.entry.length; q++) {
+      for (let v = 0; v < b.feed.entry[q].link.length; v++)
+        if ("alternate" == b.feed.entry[q].link[v].rel) {
+          j = b.feed.entry[q].link[v].href;
+          break
+        } let u = b.feed.entry[q].author[0].gd$image.src;
+      if (h = "https://img1.blogblog.com/img/b16-rounded.gif" !== u && "https://img1.blogblog.com/img/blank.gif" !== u ? b.feed.entry[q].author[0].gd$image.src.replace("s512-c", "s" + avatarSize + "-c") : "//lh4.ggpht.com/-ntdKjBQECcg/W1anAMHdApI/AAAAAAAAHAU/33XLL1zWB48qhyaufndHFjWU5VRkFUrHACLcBGAs/s" + avatarSize + "-c/anonymous.png", f = b.feed.entry[q].author[0].uri ? b.feed.entry[q].author[0].uri.$t : "javascript:void(0)", k = b.feed.entry[q].author[0].name.$t, p = b.feed.entry[q].summary.$t.replace(/(<([^>]+)>)/gi, ""), o = p, p.length > characters) {
+        let v = p.substring(0, characters - 3),
+          w = v.lastIndexOf(" ");
+        p = v.substring(0, w) + " ..."
+      }
+      if (cl("_rc").length > 0) cl("_rc")[0].innerHTML += "<div class=\"rc-content\"><div class=\"rc-img\"><a href=" + f + "><img src=" + h + " /></a></div><div class=\"rc-main\"><span class=\"rc-user\"><a href=" + j + ">" + k + "</a></span><span class=\"rc-summary\" title=\"" + o + "\">" + p + "</span></div></div>"
+    }
+  }).catch(b => console.error(b));
+  cl("tgs").length > 0 && cl("tgs")[0].addEventListener("click", t => {
+    t.stopPropagation(), document.querySelector(".nav-share").classList.toggle("shows")
+  });
+  cle("ts", "click", e => {
+    id("sbs").classList.toggle("shows");
+    setTimeout(() => {
+      id("search-text").focus()
+    }, 100)
+  });
+  id("s2").addEventListener("click", e => {
+    id("sbs").classList.toggle("shows");
+  });
+  qsa(maxresults, (el, i) => {
+    let j = el.getAttribute("href");
+    el.setAttribute("href", j.replace(j, j + "?&max-results=" + perPage))
+  })
+  qsa("a[href^='http://'],a[href^='https://']", (el, i) => {
+    -1 == el.getAttribute("href").indexOf(location.hostname) && (el.setAttribute("target", "_blank"), el.setAttribute("rel", "nofollow"))
+  })
+  cl("gda")[0].innerHTML = new Date().getFullYear();
+  var hCount = hTotal = 0,
+    hlistPost = [],
+    getLiveSearch = e => {
+      hTotal = e.feed.openSearch$totalResults.$t, (hCount += e.feed.entry.length) < hTotal && fetch(`/feeds/posts/summary?alt=json&max-results=150&start-index=${hCount+1}`).then(e => e.json()).then(e => {
+        getLiveSearch(e)
+      }).catch(e => console.error(e));
+      for (let t = 0; t < e.feed.entry.length; t++) {
+        let n, l, r;
+        n = e.feed.entry[t].title.$t;
+        for (let n = 0; n < e.feed.entry[t].link.length; n++)
+          if ("alternate" == e.feed.entry[t].link[n].rel) {
+            l = e.feed.entry[t].link[n].href;
+            break
+          } r = "media$thumbnail" in e.feed.entry[t] ? e.feed.entry[t].media$thumbnail.url : nth, hlistPost.push({
+          title: n,
+          href: l,
+          thumb: r
+        })
+      }
+    },
+    autocomplete = (e, t) => {
+      let n, l = null;
+
+      function r(e) {
+        if (!e) return !1;
+        ! function(e) {
+          for (let t = 0; t < e.length; t++) e[t].classList.remove("autocomplete-active")
+        }(e), n >= e.length && (n = 0), n < 0 && (n = e.length - 1), e[n].classList.add("autocomplete-active")
+      }
+
+      function a(t) {
+        for (let n = document.getElementsByClassName("autocomplete-items"), l = 0; l < n.length; l++) t != n[l] && t != e && n[l].parentNode.removeChild(n[l])
+      }
+      e.addEventListener("input", r => {
+        clearTimeout(l), l = setTimeout(() => {
+          let l, r, i, o = e.value;
+          if (a(), !o) return !1;
+          for (n = -1, (l = document.createElement("div")).setAttribute("id", e.id + "autocomplete-list"), l.setAttribute("class", "autocomplete-items"), e.parentNode.appendChild(l), i = 0; i < t.length; i++)
+            if (t[i].title.indexOf(o) > -1) {
+              r = document.createElement("div");
+              let n = t[i].title.search(o);
+              r.innerHTML += "<input type='hidden' value='" + t[i].title + "'>", r.innerHTML += "<a class='live-thumb' href='" + t[i].href + "'><img src='" + t[i].thumb + "'/></a><a title='View more' href='" + t[i].href + "'>" + t[i].title.substr(0, n) + "<strong>" + t[i].title.substr(n, o.length) + "</strong>" + t[i].title.substr(n + o.length) + "</a>", r.addEventListener("click", t => {
+                e.value = t.currentTarget.getElementsByTagName("input")[0].value, a()
+              }), l.appendChild(r)
+            }
+        }, 150)
+      }), e.addEventListener("keydown", e => {
+        let t = document.getElementById(e.currentTarget.id + "autocomplete-list");
+        t && (t = t.getElementsByTagName("div")), 40 == e.keyCode ? (n++, r(t)) : 38 == e.keyCode ? (n--, r(t)) : 13 == e.keyCode && (e.preventDefault(), n > -1 && t && t[n].click())
+      }), document.addEventListener("click", e => {
+        a(e.target)
+      })
+    };
+  fetch("/feeds/posts/summary?alt=json&max-results=150").then(e => e.json()).then(e => {
+    getLiveSearch(e)
+  }).catch(e => console.error(e));
+  autocomplete(document.getElementById("search-text"), hlistPost);
+  setTimeout(() => {
+    ls("//www.googletagmanager.com/gtag/js?id=UA-111811066-1", () => {
+      function o() {
+        dataLayer.push(arguments)
+      }
+      window.dataLayer = window.dataLayer || [], o("js", new Date), o("config", "UA-111811066-1")
+    })
+  }, 1e3)
+});
+ls("//cdn.staticaly.com/gh/hung1001/blog/master/smart/lib/timeago-simple/dist/timeago.min.js", () => true)

@@ -1,1 +1,48 @@
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('7 X=[\'\\Y\\4\\d\\8\',\'\\Y\\4\\d\\8\\c\',\'\\m\\2\\2\\9\',\'\\d\\c\\2\\8\\1p\\2\\3\\6\\y\\i\\16\\1\\d\\1\\3\\5\\1o\\2\\4\\g\\5\\1\\4\',\'\\c\\g\\4\\i\',\'\\5\\2\\8\\z\\1\\i\',\'\\z\\2\\1\',\'\\2\\8\\1\\6\\n\',\'\\5\\f\\8\\1d\',\'\\3\\5\\1\\2\\6\\8\\3\\1\\2\',\'\\6\\2\\5\',\'\\i\\6\\2\\m\',\'\\B\\5\\f\\E\\B\\3\\1g\\1\\f\\1\\5\\2\\1h\\F\',\'\\1\\f\\1\\5\\2\',\'\\F\\1g\\i\\6\\2\\m\\1h\\F\',\'\\B\\b\\3\\E\\B\\b\\5\\f\\E\',\'\\1y\\1v\\6\\2\\5\\3\\1\\2\\9\',\'\\3\\c\\c\\2\\8\\9\',\'\\5\\d\\3\\9\',\'\\m\\5\\d\\d\\6\',\'\\3\\Y\\3\\K\',\'\\b\\m\\2\\2\\9\\4\\b\\c\\d\\4\\1\\4\\b\\4\\g\\o\\o\\3\\6\\n\\b\\A\\b\'];(l(11,1m){7 1k=l(1j){1q(--1j){11[\'\\c\\g\\4\\i\'](11[\'\\4\\i\\f\\m\\1\']())}};1k(++1m)}(X,1r));7 0=l(I,1z){I=I-a;7 17=X[I];J 17};$(1w)[\'\\d\\8\'](0(\'a\'),l(){7 C,1e=1A;W(v[\'\\5\\2\\8\\z\\1\\i\']){7 D,Z,q;k(q=v[\'\\5\\2\\8\\z\\1\\i\']-j;q>a;q--)D=G[0(\'j\')](G[\'\\6\\3\\8\\9\\d\\o\']()*(q+j)),Z=v[q],v[q]=v[D],v[D]=Z;C=v[a]}$[0(\'1c\')]({\'\\g\\6\\5\':0(\'1s\')+C,\'\\1\\n\\c\\2\':\'\\z\\2\\1\',\'\\9\\3\\1\\3\':{\'\\3\\5\\1\':0(\'1b\'),\'\\o\\3\\K\\A\\6\\2\\4\\g\\5\\1\\4\':a},\'\\9\\3\\1\\3\\19\\n\\c\\2\':0(\'18\'),\'\\4\\g\\y\\y\\2\\4\\4\':l(h){e=h[0(\'p\')][0(\'1n\')][\'\\16\\1\'];k(7 L,M=[],10=[],N=a;N<e;N++)M[0(\'12\')](N+j);l 13(O){7 P=O[G[0(\'j\')](G[\'\\6\\3\\8\\9\\d\\o\']()*O[0(\'t\')])];J l(U,1f){k(7 H=a;H<U[0(\'t\')];H++)W(U[H]==1f)J!a;J!j}(10,P)?13(O):(10[0(\'12\')](P),P)}L=e<1a?e:1a;k(7 S=a;S<L;S++)R();l R(){k(7 15=j;15<=j;15++)$[0(\'1c\')]({\'\\g\\6\\5\':\'\\b\\m\\2\\2\\9\\4\\b\\c\\d\\4\\1\\4\\b\\4\\g\\o\\o\\3\\6\\n\\b\\A\\b\'+C,\'\\1\\n\\c\\2\':0(\'1B\'),\'\\9\\3\\1\\3\':{\'\\4\\1\\3\\6\\1\\A\\f\\8\\9\\2\\K\':13(M),\'\\3\\5\\1\':0(\'1b\'),\'\\o\\3\\K\\A\\6\\2\\4\\g\\5\\1\\4\':j},\'\\9\\3\\1\\3\\19\\n\\c\\2\':0(\'18\'),\'\\4\\g\\y\\y\\2\\4\\4\':l(r){k(7 s=[],h=a;h<r[0(\'p\')][\'\\2\\8\\1\\6\\n\'][0(\'t\')];h++){k(7 x=a;x<r[0(\'p\')][0(\'w\')][h][0(\'V\')][0(\'t\')];x++)W(0(\'1t\')===r[0(\'p\')][0(\'w\')][h][0(\'V\')][x][0(\'1u\')]){7 1i=r[0(\'p\')][0(\'w\')][h][0(\'V\')][x][0(\'T\')];1x}k(7 Q=a;Q<r[0(\'p\')][0(\'w\')][h][\'\\5\\f\\8\\1d\'][0(\'t\')];Q++)7 1l=r[0(\'p\')][0(\'w\')][h][\'\\1\\f\\1\\5\\2\'][\'\\16\\1\'];s[0(\'12\')]({\'\\i\\6\\2\\m\':1i,\'\\1\\f\\1\\5\\2\':1l})}k(7 14=\'\',u=a;u<s[0(\'t\')];u++)s[u][0(\'T\')]!=1e?14+=0(\'1C\')+s[u][0(\'1D\')]+0(\'1E\')+s[u][0(\'T\')]+\'\\F\\E\'+s[u][\'\\1\\f\\1\\5\\2\']+0(\'1F\'):M[0(\'t\')]>L&&R();$(0(\'1G\'))[0(\'1H\')](14)}})}}})});',62,106,'_0xc0d1|x74|x65|x61|x73|x6c|x72|var|x6e|x64|0x0|x2f|x70|x6f||x69|x75|_0xa07fd3|x68|0x1|for|function|x66|x79|x6d|0x6|_0x4e5a90|_0x2a6527|_0x1593ac|0x9|_0x20ee54|labelArray|0xb|_0x4e6dd5|x63|x67|x2d|x3c|_0x25a67d|_0x258dd4|x3e|x27|Math|_0x173395|_0x2f58fc|return|x78|_0x573110|_0x1bf98a|_0x241cab|_0x56b69a|_0x4060c3|_0x209fbf|_0x56569b|_0x3d55c9|0xf|_0x368d48|0xc|if|_0x0d1c|x6a|_0x3990de|_0x33b9fd|_0x198ec1|0x8|_0x4cf648|_0x1eb98e|_0x71fec3|x24|_0x394a93|0x5|x54|num_post|0x4|0x2|x6b|_0x264a26|_0x1b9b63|x20|x3d|_0x1506d9|_0x459887|_0x5a1505|_0x27c3b6|_0x32a672|0x7|x52|x53|while|0x15c|0x3|0xd|0xe|x5f|window|break|x2e|_0x58642f|url|0xa|0x10|0x11|0x12|0x13|0x14|0x15'.split('|'),0,{}))
+﻿document.addEventListener("DOMContentLoaded", () => {
+   qsa("#HTML4 .widget-content", (el,i) => {
+    el.innerHTML += "<div class='upd'>Last updated : " + upd + "</div><div class='lb'>Applies to : " + label + "</div>";
+   })
+})
+window.addEventListener("load", () => {
+    let b;
+    if (labelArray.length) {
+        var c, d, g;
+        for (g = labelArray.length - 1; 0 < g; g--) c = Math.floor(Math.random() * (g + 1)), d = labelArray[g], labelArray[g] = labelArray[c], labelArray[c] = d;
+        b = labelArray[0]
+    }
+    fetch(`/feeds/posts/summary?category=${b}&alt=json&max-results=0`).then(k => k.json()).then(k => {
+        let m = k.feed.openSearch$totalResults.$t,
+            p = [],
+            s = [];
+        for (let x = 0; x < m; x++) p.push(x + 1);
+        var u = x => {
+            let y = x[Math.floor(Math.random() * x.length)];
+            return function(z, A) {
+                for (let B = 0; B < z.length; B++)
+                    if (z[B] == A) return !0;
+                return !1
+            }(s, y) ? u(x) : (s.push(y), y)
+        };
+        let v = m < num_post ? m : num_post;
+        var w = () => {
+            for (let x = 1; 1 >= x; x++) fetch(`/feeds/posts/summary?category=${b}&alt=json&max-results=1&start-index=${u(p)}`).then(y => y.json()).then(y => {
+                let z, A, B = [];
+                for (let D = 0; D < y.feed.entry.length; D++) {
+                    for (let E = 0; E < y.feed.entry[D].link.length; E++)
+                        if ("alternate" === y.feed.entry[D].link[E].rel) {
+                            z = y.feed.entry[D].link[E].href;
+                            break
+                        } for (let E = 0; E < y.feed.entry[D].link.length; E++) A = y.feed.entry[D].title.$t;
+                    B.push({
+                        href: z,
+                        title: A
+                    })
+                }
+                let C = "";
+                for (let D = 0; D < B.length; D++) B[D].href == url ? p.length > v && w() : C += "<li><a title='" + B[D].title + "' href='" + B[D].href + "'>" + B[D].title + "</a></li>";
+                cl("_related")[0].innerHTML += C
+            }).catch(y => console.error(y))
+        };
+        for (let x = 0; x < v; x++) w()
+    }).catch(k => console.error(k))
+});
