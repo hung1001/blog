@@ -2430,3 +2430,37 @@ youtube div {
         color: #333;
     }
 }
+
+.lgi {
+  display: flex;
+  align-items: center;
+  span {
+    display: inline !important;
+    margin: 0 8px 0 0 !important;
+  }
+  i {
+    font-size: 24px;
+    margin: 0 5px;
+    color: rgba(245, 245, 245, 0.78);
+  }
+  .lgb {
+    font-size: 24px;
+    margin: 0 10px 0 5px;
+  }
+  .lbt {
+    margin: 0 10px 0 5px;
+    font-size: 20px;
+  }
+}
+
+._emo ._item a {
+  width: 30px;
+  font-size: 22px;
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  cursor: pointer;
+  &:hover span {
+    opacity: 0.7;
+    transition: all 0.5s;
+  }
+}
