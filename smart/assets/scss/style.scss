@@ -827,30 +827,19 @@ youtube {
 
 .comments-thread>.comment {
     position: relative;
-    padding-bottom: 13px;
-    margin: 0 0 18px;
+    margin: 0 0 25px;
 }
 
 .comment-header {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
 }
 
 .avatar-image-container {
     margin: 0 10px 0 0;
-    -webkit-flex-shrink: 0;
-    -ms-flex-negative: 0;
     flex-shrink: 0;
 
     img {
-        -webkit-border-radius: 100%;
-        -moz-border-radius: 100%;
         border-radius: 100%;
         height: 35px;
         width: 35px;
@@ -895,9 +884,9 @@ youtube {
 }
 
 .comment-content {
+    font-size: 14px;
     position: relative;
-    padding-left: 43px;
-    margin: 0 0 15px;
+    margin: 7px 0 0;
 
     pre {
         user-select: all;
@@ -913,12 +902,12 @@ youtube {
 }
 
 .comments-thread .comment-child {
-    padding-left: 3em;
-    margin-top: 5px;
+    margin-top: 15px;
+    padding-left: 20px;
 }
 
 .comment-action {
-    bottom: 0;
+    bottom: -10px;
     position: absolute;
 
     &:hover {
@@ -1100,6 +1089,29 @@ youtube {
 
 .post-labels {
     display: flex;
+    justify-content: space-between;
+
+    .post-label {
+        display: flex;
+        align-items: center;
+    }
+
+    .post-nav a {
+        &:hover {
+            background: #f2f2f2;
+            transition: .3s ease;
+        }
+
+        font-size: 18px;
+        box-shadow: 2px 8px 15px -10px #c7c7c7;
+        background: #fff;
+        border-radius: 100%;
+        padding: 5px 12px;
+        font-weight: 700;
+        color: #333;
+        display: inline-block;
+        margin: 0 2px 0 2px;
+    }
 
     span {
         font-weight: 600;
@@ -2261,6 +2273,25 @@ youtube div {
     }
 }
 
+@media (max-width: 700px) {
+    .cmt-action {
+        margin: 10px 0 0;
+    }
+
+    .comment-header {
+        flex-direction: column;
+    }
+
+    .comment-author::after {
+        display: none;
+    }
+
+    .comment-time {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+
 @media (max-width: 600px) {
     .footer .top-footer .top-right .ims {
         align-items: flex-start;
@@ -2432,35 +2463,203 @@ youtube div {
 }
 
 .lgi {
-  display: flex;
-  align-items: center;
-  span {
-    display: inline !important;
-    margin: 0 8px 0 0 !important;
-  }
-  i {
-    font-size: 24px;
-    margin: 0 5px;
-    color: rgba(245, 245, 245, 0.78);
-  }
-  .lgb {
-    font-size: 24px;
-    margin: 0 10px 0 5px;
-  }
-  .lbt {
-    margin: 0 10px 0 5px;
-    font-size: 20px;
-  }
+    display: flex;
+    align-items: center;
+
+    span {
+        display: inline !important;
+        margin: 0 8px 0 0 !important;
+    }
+
+    i {
+        font-size: 24px;
+        margin: 0 5px;
+        color: rgba(245, 245, 245, 0.78);
+    }
+
+    .lgb {
+        font-size: 24px;
+        margin: 0 10px 0 5px;
+    }
+
+    .lbt {
+        margin: 0 10px 0 5px;
+        font-size: 20px;
+    }
 }
 
 ._emo ._item a {
-  width: 30px;
-  font-size: 22px;
-  display: inline-block;
-  margin: 0 10px 10px 0;
-  cursor: pointer;
-  &:hover span {
-    opacity: 0.7;
-    transition: all 0.5s;
-  }
+    width: 30px;
+    font-size: 22px;
+    display: inline-block;
+    margin: 0 10px 10px 0;
+    cursor: pointer;
+
+    &:hover span {
+        opacity: 0.7;
+        transition: all 0.5s;
+    }
+}
+
+.FeaturedPost .post-content .post-info {
+    .post-title {
+        margin: 10px 0;
+
+        a {
+            color: #333;
+            font-size: 17px;
+            font-weight: 700;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .post-meta {
+        font-size: 15px;
+
+        .post-date {
+            display: inline-block;
+            margin-left: 3px;
+        }
+    }
+
+    .post-snippet {
+        margin: 10px 0 0;
+    }
+}
+
+.content>.row .sidebar .PopularPosts article.post:nth-of-type(1) {
+    .thumbnail {
+        flex-direction: column;
+
+        .thumb {
+            width: 100%;
+            margin: 0 0 10px;
+            flex-shrink: initial;
+            height: 200px;
+        }
+
+        time {
+            display: none;
+        }
+    }
+
+    .post-title a {
+        font-size: 16px;
+    }
+}
+
+.comment-container {
+    display: flex;
+
+    .avatar-image {
+        box-sizing: border-box;
+        padding-top: 10px;
+        width: 50px;
+        flex-shrink: 0;
+
+        img {
+            width: 35px;
+            height: 35px;
+
+            border-radius: 100%;
+        }
+    }
+
+    .comment-block {
+        width: calc(100% - 50px);
+        position: relative;
+
+        .comment-bg {
+            background: #f2f3f5;
+            box-sizing: border-box;
+            padding: 10px 15px;
+            border-radius: 5px;
+
+            &::before {
+                position: absolute;
+                content: "";
+                border-color: transparent #f2f3f5 transparent transparent;
+                border-width: 9px 10px;
+                border-style: solid;
+                left: -19px;
+                top: 15px;
+            }
+        }
+    }
+}
+
+.author-box .author-wrap {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+
+    .author-header {
+        text-align: center;
+        width: 130px;
+        flex-shrink: 0;
+
+        img {
+            display: block;
+            margin: auto auto 8px;
+            border-radius: 100%;
+            width: 80px;
+            height: 80px;
+        }
+
+        a {
+            display: block;
+            font-weight: 600;
+            color: #333;
+        }
+    }
+
+    .author-content {
+
+        box-sizing: border-box;
+        padding-right: 15px;
+        line-height: 1.4;
+        text-align: right;
+
+        .author-ico {
+            font-size: 18px;
+            box-sizing: border-box;
+            padding-bottom: 10px;
+
+            a {
+                display: inline-block;
+                margin-right: 10px;
+
+                &.face {
+                    color: #3b5998;
+                }
+
+                &.goo {
+                    color: #dd4b39;
+                }
+
+                &.twi {
+                    color: #1da1f2;
+                }
+
+                &.linked {
+                    color: #0077b5;
+                }
+
+                &.yout {
+                    color: #ff0000;
+                }
+            }
+        }
+    }
+}
+
+.hh-title {
+    display: inline-block;
+    margin: 0 0 0.5em;
+    font-size: 17px;
+    font-weight: 600;
 }
