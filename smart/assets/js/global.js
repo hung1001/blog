@@ -53,3 +53,5 @@ var ls = (e, a) => {
     a()
   }), t.src = e, document.getElementsByTagName("body")[0].appendChild(t)
 };
+
+const cdn = "//cdn.jsdelivr.net/gh/hung1001/blog/smart/";
