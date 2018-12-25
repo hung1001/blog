@@ -719,7 +719,7 @@ youtube {
         border: 1px solid #e0e0e0;
         border-bottom: 0;
         text-align: right;
-        padding: 3px 0 5px;
+        padding: 3px 0 4px;
     }
 
     .cpt {
@@ -739,7 +739,6 @@ youtube {
         }
 
         &::before {
-            content: "\f24d";
             font-weight: 300;
         }
     }
@@ -1135,7 +1134,7 @@ youtube {
 .post-footer {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #f5f5f5;
 }
 
 .post-labels {
@@ -2649,6 +2648,13 @@ youtube div {
     }
 }
 
+.author-box {
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #f5f5f5;
+}
+
+
 .author-box .author-wrap {
     align-items: flex-end;
     display: flex;
@@ -3111,7 +3117,6 @@ input {
     }
 }
 
-
 .reaction-wrap {
     margin: 10px 0 15px;
 }
@@ -3126,9 +3131,9 @@ input {
         cursor: pointer;
         width: 40px;
         height: 40px;
-        background: url("//lh3.ggpht.com/-Y2Ut7fjcfgE/XBpQn22RS_I/AAAAAAAAIaU/navrdITvFiAO88_K9z-Vpg1qyfoBBKFQwCLcBGAs/h0/hung1001-reaction.png") no-repeat;
+        background: url("//lh3.ggpt.com/-o0MDoAYDvcE/XCGRJVlxd5I/AAAAAAAAIfE/IdP0rCw479sUkFYpnF_uPp-g34h6BZ5zQCLcBGAs/h0/hung1001-react-sprites.png") no-repeat;
         background-size: 40px;
-        transition: all 0.4s cubic-bezier(0.64, 0.57, 0.67, 1.53), background-color 0.4s linear;
+        transition: background 0s;
     }
 
     margin-left: 5px;
@@ -3136,50 +3141,98 @@ input {
 }
 
 #fi-like {
-    background-position: 0 0;
+    background-position: 0 -480px;
 }
 
 #fi-love {
-    background-position: 0 -40px;
+    background-position: 0 -520px;
 }
 
 #fi-thanks {
-    background-position: 0 -240px;
+    background-position: 0 -720px;
 }
 
 #fi-haha {
-    background-position: 0 -80px;
+    background-position: 0 -560px;
 }
 
 #fi-wow {
-    background-position: 0 -120px;
+    background-position: 0 -600px;
 }
 
 #fi-sad {
-    background-position: 0 -160px;
+    background-position: 0 -640px;
 }
 
 #fi-angry {
-    background-position: 0 -200px;
+    background-position: 0 -680px;
 }
 
 #fi-plane {
-    background-position: 0 -280px;
+    background-position: 0 -760px;
 }
 
 #fi-fire {
-    background-position: 0 -320px;
+    background-position: 0 -800px;
 }
 
 #fi-yay {
-    background-position: 0 -360px;
+    background-position: 0 -840px;
 }
 
 #fi-ouch {
-    background-position: 0 -400px;
+    background-position: 0 -880px;
 }
 
 #fi-confuse {
+    background-position: 0 -920px;
+}
+
+.like-button.like #fi-like {
+    background-position: 0 0;
+}
+
+.love-button.love #fi-love {
+    background-position: 0 -40px;
+}
+
+.thanks-button.thanks #fi-thanks {
+    background-position: 0 -240px;
+}
+
+.haha-button.haha #fi-haha {
+    background-position: 0 -80px;
+}
+
+.wow-button.wow #fi-wow {
+    background-position: 0 -120px;
+}
+
+.sad-button.sad #fi-sad {
+    background-position: 0 -160px;
+}
+
+.angry-button.angry #fi-angry {
+    background-position: 0 -200px;
+}
+
+.plane-button.plane #fi-plane {
+    background-position: 0 -280px;
+}
+
+.fire-button.fire #fi-fire {
+    background-position: 0 -320px;
+}
+
+.yay-button.yay #fi-yay {
+    background-position: 0 -360px;
+}
+
+.ouch-button.ouch #fi-ouch {
+    background-position: 0 -400px;
+}
+
+.confuse-button.confuse #fi-confuse {
     background-position: 0 -440px;
 }
 
@@ -3239,66 +3292,63 @@ input {
     }
 }
 
-#fi-angry.angried span,
-#fi-fire.fired span,
-#fi-haha.hahaed span,
-#fi-like.liked span,
-#fi-love.loved span,
-#fi-plane.planed span,
-#fi-sad.saded span,
-#fi-thanks.thanksed span,
-#fi-wow.wowed span,
-#fi-yay.yayed span,
-#fi-ouch.ouched span,
-#fi-confuse.confused span {
+.angry-button.angry #fi-angry span,
+.confuse-button.confuse #fi-confuse span,
+.fire-button.fire #fi-fire span,
+.haha-button.haha #fi-haha span,
+.like-button.like #fi-like span,
+.love-button.love #fi-love span,
+.ouch-button.ouch #fi-ouch span,
+.plane-button.plane #fi-plane span,
+.sad-button.sad #fi-sad span,
+.thanks-button.thanks #fi-thanks span,
+.wow-button.wow #fi-wow span,
+.yay-button.yay #fi-yay span {
     width: 50px;
 }
 
-#fi-angry.angried span::before,
-#fi-fire.fired span::before,
-#fi-like.liked span::before,
-#fi-love.loved span::before,
-#fi-plane.planed span::before,
-#fi-thanks.thanksed span::before,
-#fi-ouch.ouched span::before {
+.angry-button.angry #fi-angry span::before,
+.fire-button.fire #fi-fire span::before,
+.like-button.like #fi-like span::before,
+.love-button.love #fi-love span::before,
+.ouch-button.ouch #fi-ouch span::before,
+.plane-button.plane #fi-plane span::before,
+.thanks-button.thanks #fi-thanks span::before {
     width: 10%;
     right: -10%;
     transition: all 0.4s cubic-bezier(0.085, 0.89, 0.6, 0.115);
 }
 
-#fi-like.liked span::before {
+.like-button.like #fi-like span::before {
     background: #548dff;
 }
 
-#fi-love.loved span::before {
+.love-button.love #fi-love span::before {
     background: #f55065;
 }
 
-#fi-thanks.thanksed span::before {
+.thanks-button.thanks #fi-thanks span::before {
     background: #966fd3;
 }
 
-#fi-plane.planed span::before {
+.plane-button.plane #fi-plane span::before {
     background: #1592fe;
 }
 
-#fi-fire.fired span::before {
+.fire-button.fire #fi-fire span::before {
     background: #fc4d18;
 }
 
-#fi-angry.angried span::before {
+.angry-button.angry #fi-angry span::before,
+.ouch-button.ouch #fi-ouch span::before {
     background: #f97c68;
 }
 
-#fi-ouch.ouched span::before {
-    background: #4ba5d9;
-}
-
-#fi-haha.hahaed span::before,
-#fi-sad.saded span::before,
-#fi-wow.wowed span::before,
-#fi-yay.yayed span::before,
-#fi-confuse.confused span::before {
+.confuse-button.confuse #fi-confuse span::before,
+.haha-button.haha #fi-haha span::before,
+.sad-button.sad #fi-sad span::before,
+.wow-button.wow #fi-wow span::before,
+.yay-button.yay #fi-yay span::before {
     width: 10%;
     right: -10%;
     background: #ffda6a;
@@ -3315,41 +3365,42 @@ input {
     border-radius: 100%;
     padding: 2px 6px;
     color: #fff;
+    background: #a9a9a9;
 }
 
-.like-button .total {
+.like-button.like .total {
     background: #548dff;
 }
 
-.love-button .total {
+.love-button.love .total {
     background: #f55065;
 }
 
-.haha-button .total,
-.sad-button .total,
-.wow-button .total,
-.yay-button .total,
-.confuse-button .total {
+.confuse-button.confuse .total,
+.haha-button.haha .total,
+.sad-button.sad .total,
+.wow-button.wow .total,
+.yay-button.yay .total {
     background: #ffda6a;
 }
 
-.angry-button .total {
+.angry-button.angry .total {
     background: #f97c68;
 }
 
-.plane-button .total {
+.plane-button.plane .total {
     background: #1592fe;
 }
 
-.thanks-button .total {
+.thanks-button.thanks .total {
     background: #966fd3;
 }
 
-.fire-button .total {
+.fire-button.fire .total {
     background: #fc4d18;
 }
 
-.ouch-button .total {
+.ouch-button.ouch .total {
     background: #4ba5d9;
 }
 
@@ -3438,7 +3489,7 @@ input {
 
     .item {
         display: inline-block;
-        width: 25px;
+        width: 30px;
         margin: 0 15px 0 0;
         cursor: pointer;
     }
@@ -3453,6 +3504,12 @@ input {
         opacity: 0;
         font-size: 7px;
     }
+}
+
+.comment-content .img-emoji {
+    transform: scale(0.8);
+    position: relative;
+    top: 4px;
 }
 
 .img-0 {
@@ -3741,4 +3798,426 @@ input {
 
 .img-1420 {
     background-position: 0 -1420px;
+}
+
+.sort-comment {
+    text-align: right;
+    margin-bottom: 20px;
+
+    .sort-title {
+        font-size: 15px;
+        display: inline-block;
+        margin-right: 3px;
+    }
+
+    .sort-sel {
+        display: inline-block;
+        position: relative;
+
+        &::after,
+        &::before {
+            position: absolute;
+            content: "";
+            right: 7px;
+            border-style: solid;
+            border-width: 4px;
+            width: 0;
+            height: 0;
+        }
+
+        &::after {
+            top: 2px;
+            border-color: transparent transparent #333;
+        }
+
+        &::before {
+            bottom: 2px;
+            border-color: #333 transparent transparent;
+        }
+
+        .sort-option {
+            cursor: pointer;
+            background: #fff;
+            border: 1px solid #aaa;
+            padding: 2px 20px 2px 7px;
+            color: #656565;
+            font-size: 15px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            border-radius: 3px;
+            -moz-appearance: window;
+            -webkit-appearance: none;
+            outline: 0;
+        }
+    }
+}
+
+.cmt-action a.active {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        height: 2px;
+        width: 100%;
+        background: #d70f0f;
+        left: 0;
+        bottom: -3px;
+    }
+}
+
+.blue-emoji {
+    transform: scale(1.1);
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-image: url("//lh3.ggpht.com/-e3HFMR6Bojc/XCCB7BklWlI/AAAAAAAAIec/lpI6fwogUv4XLjb52lvNteHctL8IVgMgQCLcBGAs/h0/blue-emoji.png");
+    background-repeat: no-repeat;
+    background-size: 32px;
+}
+
+.emo {
+    .item {
+        cursor: pointer;
+        text-align: center;
+        display: inline-block;
+        margin: 5px 10px 5px 0;
+    }
+
+    .blue-emoji {
+        display: block;
+    }
+
+    .short-code {
+        text-align: center;
+        display: block;
+        opacity: 0;
+        font-size: 7px;
+    }
+}
+
+.comment-block .blue-emoji {
+    position: relative;
+    top: 5px;
+}
+
+.blue-0 {
+    background-position: 0 -0px;
+}
+
+.blue-32 {
+    background-position: 0 -32px;
+}
+
+.blue-64 {
+    background-position: 0 -64px;
+}
+
+.blue-96 {
+    background-position: 0 -96px;
+}
+
+.blue-128 {
+    background-position: 0 -128px;
+}
+
+.blue-160 {
+    background-position: 0 -160px;
+}
+
+.blue-192 {
+    background-position: 0 -192px;
+}
+
+.blue-224 {
+    background-position: 0 -224px;
+}
+
+.blue-256 {
+    background-position: 0 -256px;
+}
+
+.blue-288 {
+    background-position: 0 -288px;
+}
+
+.blue-320 {
+    background-position: 0 -320px;
+}
+
+.blue-352 {
+    background-position: 0 -352px;
+}
+
+.blue-384 {
+    background-position: 0 -384px;
+}
+
+.blue-416 {
+    background-position: 0 -416px;
+}
+
+.blue-448 {
+    background-position: 0 -448px;
+}
+
+.blue-480 {
+    background-position: 0 -480px;
+}
+
+.blue-512 {
+    background-position: 0 -512px;
+}
+
+.blue-544 {
+    background-position: 0 -544px;
+}
+
+.blue-576 {
+    background-position: 0 -576px;
+}
+
+.blue-608 {
+    background-position: 0 -608px;
+}
+
+.blue-640 {
+    background-position: 0 -640px;
+}
+
+.blue-672 {
+    background-position: 0 -672px;
+}
+
+.blue-704 {
+    background-position: 0 -704px;
+}
+
+.blue-736 {
+    background-position: 0 -736px;
+}
+
+.blue-768 {
+    background-position: 0 -768px;
+}
+
+.blue-800 {
+    background-position: 0 -800px;
+}
+
+.blue-832 {
+    background-position: 0 -832px;
+}
+
+.blue-864 {
+    background-position: 0 -864px;
+}
+
+.blue-896 {
+    background-position: 0 -896px;
+}
+
+.blue-928 {
+    background-position: 0 -928px;
+}
+
+.blue-960 {
+    background-position: 0 -960px;
+}
+
+.blue-992 {
+    background-position: 0 -992px;
+}
+
+.blue-1024 {
+    background-position: 0 -1024px;
+}
+
+.blue-1056 {
+    background-position: 0 -1056px;
+}
+
+.blue-1088 {
+    background-position: 0 -1088px;
+}
+
+.blue-1120 {
+    background-position: 0 -1120px;
+}
+
+.blue-1152 {
+    background-position: 0 -1152px;
+}
+
+.blue-1184 {
+    background-position: 0 -1184px;
+}
+
+.blue-1216 {
+    background-position: 0 -1216px;
+}
+
+.blue-1248 {
+    background-position: 0 -1248px;
+}
+
+.blue-1280 {
+    background-position: 0 -1280px;
+}
+
+.blue-1312 {
+    background-position: 0 -1312px;
+}
+
+.blue-1344 {
+    background-position: 0 -1344px;
+}
+
+.blue-1376 {
+    background-position: 0 -1376px;
+}
+
+.blue-1408 {
+    background-position: 0 -1408px;
+}
+
+.blue-1440 {
+    background-position: 0 -1440px;
+}
+
+.blue-1472 {
+    background-position: 0 -1472px;
+}
+
+.blue-1504 {
+    background-position: 0 -1504px;
+}
+
+.blue-1536 {
+    background-position: 0 -1536px;
+}
+
+.blue-1568 {
+    background-position: 0 -1568px;
+}
+
+.blue-1600 {
+    background-position: 0 -1600px;
+}
+
+.blue-1632 {
+    background-position: 0 -1632px;
+}
+
+.blue-1664 {
+    background-position: 0 -1664px;
+}
+
+.blue-1696 {
+    background-position: 0 -1696px;
+}
+
+.blue-1728 {
+    background-position: 0 -1728px;
+}
+
+.blue-1760 {
+    background-position: 0 -1760px;
+}
+
+.blue-1792 {
+    background-position: 0 -1792px;
+}
+
+.blue-1824 {
+    background-position: 0 -1824px;
+}
+
+.blue-1856 {
+    background-position: 0 -1856px;
+}
+
+.blue-1888 {
+    background-position: 0 -1888px;
+}
+
+.blue-1920 {
+    background-position: 0 -1920px;
+}
+
+.blue-1952 {
+    background-position: 0 -1952px;
+}
+
+.blue-1984 {
+    background-position: 0 -1984px;
+}
+
+.blue-2016 {
+    background-position: 0 -2016px;
+}
+
+.blue-2048 {
+    background-position: 0 -2048px;
+}
+
+.blue-2080 {
+    background-position: 0 -2080px;
+}
+
+.blue-2112 {
+    background-position: 0 -2112px;
+}
+
+.blue-2144 {
+    background-position: 0 -2144px;
+}
+
+.blue-2176 {
+    background-position: 0 -2176px;
+}
+
+.blue-2208 {
+    background-position: 0 -2208px;
+}
+
+.blue-2240 {
+    background-position: 0 -2240px;
+}
+
+.blue-2272 {
+    background-position: 0 -2272px;
+}
+
+.blue-2304 {
+    background-position: 0 -2304px;
+}
+
+.blue-2336 {
+    background-position: 0 -2336px;
+}
+
+.blue-2368 {
+    background-position: 0 -2368px;
+}
+
+.blue-2400 {
+    background-position: 0 -2400px;
+}
+
+.blue-2432 {
+    background-position: 0 -2432px;
+}
+
+.blue-2464 {
+    background-position: 0 -2464px;
+}
+
+.blue-2496 {
+    background-position: 0 -2496px;
+}
+
+.blue-2528 {
+    background-position: 0 -2528px;
 }
