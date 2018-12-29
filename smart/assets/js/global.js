@@ -67,6 +67,10 @@ var setCookie = (e, o) => {
     t.setDate(t.getDate() + 9125), document.cookie = e + "=" + escape(o) + "; expires=" + t.toGMTString() + "; path=/"
   },
   getCookie = e => document.cookie.length > 0 && (cookie_start = document.cookie.indexOf(e + "="), -1 != cookie_start) ? (cookie_start = cookie_start + e.length + 1, cookie_end = document.cookie.indexOf(";", cookie_start), -1 == cookie_end && (cookie_end = document.cookie.length), unescape(document.cookie.substring(cookie_start, cookie_end))) : "";
-"no" != getCookie("cookie_message") && (document.getElementsByClassName("dialog")[0].style.display = "block"), document.getElementsByClassName("c-dialog")[0].addEventListener("click", e => {
-  document.getElementsByClassName("dialog")[0].style.display = "none", setCookie("cookie_message", "no")
-});
+"no" != getCookie("cookie_message") && (document.getElementsByClassName("dialog")[0].style.display = "block");
+
+if (cl("c-dialog").length > 0) {
+  cl("c-dialog")[0].addEventListener("click", e => {
+    cl("dialog")[0].style.display = "none", setCookie("cookie_message", "no")
+  });
+};

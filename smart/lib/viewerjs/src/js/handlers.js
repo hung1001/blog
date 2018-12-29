@@ -7,8 +7,11 @@ import {
   CLASS_MOVE,
   CLASS_TRANSITION,
   DATA_ACTION,
+  EVENT_CLICK,
+  EVENT_DBLCLICK,
   EVENT_LOAD,
   EVENT_VIEWED,
+  IS_TOUCH_DEVICE,
 } from './constants';
 import {
   addClass,
@@ -21,15 +24,22 @@ import {
   getPointer,
   getTransforms,
   isFunction,
+  isNumber,
   removeClass,
   setStyle,
   toggleClass,
 } from './utilities';
 
 export default {
-  click({ target }) {
+  click(event) {
+    const { target } = event;
     const { options, imageData } = this;
     const action = getData(target, DATA_ACTION);
+
+    // Cancel the emulated click when the native click event was triggered.
+    if (IS_TOUCH_DEVICE && event.isTrusted && target === this.canvas) {
+      clearTimeout(this.clickCanvasTimeout);
+    }
 
     switch (action) {
       case 'mix':
@@ -107,7 +117,14 @@ export default {
   },
 
   dblclick(event) {
-    if (event.target.parentElement === this.canvas) {
+    event.preventDefault();
+
+    if (this.viewed && event.target === this.image) {
+      // Cancel the emulated double click when the native dblclick event was triggered.
+      if (IS_TOUCH_DEVICE && event.isTrusted) {
+        clearTimeout(this.doubleClickImageTimeout);
+      }
+
       this.toggle();
     }
   },
@@ -164,8 +181,8 @@ export default {
     });
   },
 
-  loadImage(e) {
-    const image = e.target;
+  loadImage(event) {
+    const image = event.target;
     const parent = image.parentNode;
     const parentWidth = parent.offsetWidth || 30;
     const parentHeight = parent.offsetHeight || 50;
@@ -198,14 +215,14 @@ export default {
     });
   },
 
-  keydown(e) {
+  keydown(event) {
     const { options } = this;
 
     if (!this.fulled || !options.keyboard) {
       return;
     }
 
-    switch (e.keyCode || e.which || e.charCode) {
+    switch (event.keyCode || event.which || event.charCode) {
       // Escape
       case 27:
         if (this.played) {
@@ -236,7 +253,7 @@ export default {
       // ArrowUp
       case 38:
         // Prevent scroll on Firefox
-        e.preventDefault();
+        event.preventDefault();
 
         // Zoom in
         this.zoom(options.zoomRatio, true);
@@ -250,7 +267,7 @@ export default {
       // ArrowDown
       case 40:
         // Prevent scroll on Firefox
-        e.preventDefault();
+        event.preventDefault();
 
         // Zoom out
         this.zoom(-options.zoomRatio, true);
@@ -263,8 +280,8 @@ export default {
       // Ctrl + 1
       // eslint-disable-next-line no-fallthrough
       case 49:
-        if (e.ctrlKey) {
-          e.preventDefault();
+        if (event.ctrlKey) {
+          event.preventDefault();
           this.toggle();
         }
 
@@ -274,35 +291,49 @@ export default {
     }
   },
 
-  dragstart(e) {
-    if (e.target.tagName.toLowerCase() === 'img') {
-      e.preventDefault();
+  dragstart(event) {
+    if (event.target.tagName.toLowerCase() === 'img') {
+      event.preventDefault();
     }
   },
 
-  pointerdown(e) {
+  pointerdown(event) {
     const { options, pointers } = this;
+    const { buttons, button } = event;
 
-    if (!this.viewed || this.showing || this.viewing || this.hiding) {
+    if (
+      !this.viewed
+      || this.showing
+      || this.viewing
+      || this.hiding
+
+      // No primary button (usually the left button)
+      // Note: Touch events does not contain `buttons` and `button` properties
+      || (isNumber(buttons) && buttons > 1)
+      || (isNumber(button) && button > 0)
+
+      // Open context menu
+      || event.ctrlKey
+    ) {
       return;
     }
 
-    // This line is required for preventing page zooming in iOS browsers
-    e.preventDefault();
+    // Prevent default behaviours as page zooming in touch devices.
+    event.preventDefault();
 
-    if (e.changedTouches) {
-      forEach(e.changedTouches, (touch) => {
+    if (event.changedTouches) {
+      forEach(event.changedTouches, (touch) => {
         pointers[touch.identifier] = getPointer(touch);
       });
     } else {
-      pointers[e.pointerId || 0] = getPointer(e);
+      pointers[event.pointerId || 0] = getPointer(event);
     }
 
     let action = options.movable ? ACTION_MOVE : false;
 
     if (Object.keys(pointers).length > 1) {
       action = ACTION_ZOOM;
-    } else if ((e.pointerType === 'touch' || e.type === 'touchstart') && this.isSwitchable()) {
+    } else if ((event.pointerType === 'touch' || event.type === 'touchstart') && this.isSwitchable()) {
       action = ACTION_SWITCH;
     }
 
@@ -313,52 +344,89 @@ export default {
     this.action = action;
   },
 
-  pointermove(e) {
-    const {
-      pointers,
-      action,
-    } = this;
+  pointermove(event) {
+    const { pointers, action } = this;
 
     if (!this.viewed || !action) {
       return;
     }
 
-    e.preventDefault();
+    event.preventDefault();
 
-    if (e.changedTouches) {
-      forEach(e.changedTouches, (touch) => {
-        // // The first parameter should not be undefined in some browsers
+    if (event.changedTouches) {
+      forEach(event.changedTouches, (touch) => {
         assign(pointers[touch.identifier] || {}, getPointer(touch, true));
       });
     } else {
-      assign(pointers[e.pointerId || 0] || {}, getPointer(e, true));
+      assign(pointers[event.pointerId || 0] || {}, getPointer(event, true));
     }
 
-    this.change(e);
+    this.change(event);
   },
 
-  pointerup(e) {
-    const { action, pointers } = this;
+  pointerup(event) {
+    const { options, action, pointers } = this;
+    let pointer;
 
-    if (e.changedTouches) {
-      forEach(e.changedTouches, (touch) => {
+    if (event.changedTouches) {
+      forEach(event.changedTouches, (touch) => {
+        pointer = pointers[touch.identifier];
         delete pointers[touch.identifier];
       });
     } else {
-      delete pointers[e.pointerId || 0];
+      pointer = pointers[event.pointerId || 0];
+      delete pointers[event.pointerId || 0];
     }
 
     if (!action) {
       return;
     }
 
-    e.preventDefault();
+    event.preventDefault();
 
-    if (this.options.transition && (action === ACTION_MOVE || action === ACTION_ZOOM)) {
+    if (options.transition && (action === ACTION_MOVE || action === ACTION_ZOOM)) {
       addClass(this.image, CLASS_TRANSITION);
     }
 
     this.action = false;
+
+    // Emulate click and double click in touch devices to support backdrop and image zooming (#210).
+    if (
+      IS_TOUCH_DEVICE
+      && action !== ACTION_ZOOM
+      && pointer
+      && (Date.now() - pointer.timeStamp < 500)
+    ) {
+      clearTimeout(this.clickCanvasTimeout);
+      clearTimeout(this.doubleClickImageTimeout);
+
+      if (options.toggleOnDblclick && this.viewed && event.target === this.image) {
+        if (this.imageClicked) {
+          this.imageClicked = false;
+
+          // This timeout will be cleared later when a native dblclick event is triggering
+          this.doubleClickImageTimeout = setTimeout(() => {
+            dispatchEvent(this.image, EVENT_DBLCLICK);
+          }, 50);
+        } else {
+          this.imageClicked = true;
+
+          // The default timing of a double click in Windows is 500 ms
+          this.doubleClickImageTimeout = setTimeout(() => {
+            this.imageClicked = false;
+          }, 500);
+        }
+      } else {
+        this.imageClicked = false;
+
+        if (options.backdrop && options.backdrop !== 'static' && event.target === this.canvas) {
+          // This timeout will be cleared later when a native click event is triggering
+          this.clickCanvasTimeout = setTimeout(() => {
+            dispatchEvent(this.canvas, EVENT_CLICK);
+          }, 50);
+        }
+      }
+    }
   },
 
   resize() {
@@ -396,12 +464,12 @@ export default {
     }
   },
 
-  wheel(e) {
+  wheel(event) {
     if (!this.viewed) {
       return;
     }
 
-    e.preventDefault();
+    event.preventDefault();
 
     // Limit wheel speed to prevent zoom too fast
     if (this.wheeling) {
@@ -417,14 +485,14 @@ export default {
     const ratio = Number(this.options.zoomRatio) || 0.1;
     let delta = 1;
 
-    if (e.deltaY) {
-      delta = e.deltaY > 0 ? 1 : -1;
-    } else if (e.wheelDelta) {
-      delta = -e.wheelDelta / 120;
-    } else if (e.detail) {
-      delta = e.detail > 0 ? 1 : -1;
+    if (event.deltaY) {
+      delta = event.deltaY > 0 ? 1 : -1;
+    } else if (event.wheelDelta) {
+      delta = -event.wheelDelta / 120;
+    } else if (event.detail) {
+      delta = event.detail > 0 ? 1 : -1;
     }
 
-    this.zoom(-delta * ratio, true, e);
+    this.zoom(-delta * ratio, true, event);
   },
 };

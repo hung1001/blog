@@ -171,7 +171,6 @@ a {
             display: block;
             margin-bottom: 30px;
             background-color: $white-color;
-            overflow: hidden;
             position: relative;
             z-index: 1;
 
@@ -186,6 +185,10 @@ a {
                     border: 1px solid #eee;
                     box-sizing: border-box;
                 }
+            }
+
+            &.latest-post {
+                padding-bottom: 5px;
             }
         }
     }
@@ -840,9 +843,18 @@ youtube {
         &:after {
             content: "\f10e";
             font-weight: 900;
+            display: none;
         }
 
         &:before {
+            font-size: 12px;
+            position: absolute;
+            padding: 5px 8px;
+            border-radius: 100%;
+            color: #fff;
+            background: #d70f0f;
+            top: -15px;
+            z-index: 100;
             content: "\f10d";
             font-weight: 900;
         }
@@ -863,17 +875,18 @@ youtube {
     }
 
     blockquote {
-        padding: 0 15px;
-        margin: 15px 0;
-        border-left: 4px solid $dark-color;
 
-        &:before {
-            margin-right: 10px;
-        }
 
-        &:after {
-            margin-left: 10px;
-        }
+        margin: 15px 0 20px;
+        color: #222;
+        box-shadow: 0 12px 35px -11px rgba(0, 0, 0, 0.4);
+        padding: 20px;
+        box-sizing: border-box;
+        border-top: 3px solid #d70f0f;
+        border-left: 0;
+        position: relative;
+
+
     }
 }
 
@@ -3027,7 +3040,7 @@ input {
                 font-size: 13px;
 
                 .rc-reply {
-                    display: inline-block;
+                    display: none;
                     margin-right: 8px;
                     padding-right: 10px;
                     position: relative;
@@ -4542,7 +4555,6 @@ input {
 }
 
 .has-comment {
-    display: none;
     border-bottom: 1px solid #f5f5f5;
     margin-bottom: 15px;
 }
@@ -4867,4 +4879,189 @@ input {
             }
         }
     }
+}
+
+.comment-content-deleted {
+    position: relative;
+
+    &:before {
+        content: "This comment is marked as spam";
+        padding: 3px 10px;
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        top: 25px;
+        right: -15px;
+        border: 1px solid rgba(219, 27, 27, 0.5);
+        text-align: center;
+        border-radius: 4px;
+        z-index: 100;
+    }
+
+    &:hover:before {
+        display: block;
+    }
+
+    &:after {
+        content: "\f188";
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 300;
+        display: inline-block;
+        color: #db1b1b;
+    }
+}
+
+.ribbon-pre {
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    z-index: 1;
+    overflow: hidden;
+    width: 75px;
+    height: 75px;
+    text-align: right;
+
+    span {
+        &::after {
+            content: "";
+            top: 100%;
+            z-index: -1;
+            border-bottom: 3px solid transparent;
+            border-top: 3px solid rgba(215, 15, 15, 0.85);
+            position: absolute;
+        }
+
+        &::before {
+            content: "";
+            top: 100%;
+            z-index: -1;
+            border-bottom: 3px solid transparent;
+            border-top: 3px solid rgba(215, 15, 15, 0.85);
+            position: absolute;
+            left: 0;
+            border-left: 3px solid rgba(215, 15, 15, 0.85);
+            border-right: 3px solid transparent;
+        }
+
+        &::after {
+            right: 0;
+            border-left: 3px solid transparent;
+            border-right: 3px rgba(215, 15, 15, 0.85);
+        }
+
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+        line-height: 18px;
+        letter-spacing: 0.02rem;
+        transform: rotate(-45deg);
+        width: 95px;
+        display: block;
+        background: rgba(215, 15, 15, 0.85);
+        box-shadow: 0 3px 10px -5px #000000;
+        position: absolute;
+        top: 19px;
+        left: -21px;
+    }
+}
+
+.btn-random {
+    outline: 0;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 6px 12px 7px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+        background: #f8f8f8;
+    }
+}
+
+.random-posts {
+    margin: 20px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+        width: 32%;
+        margin-right: 2%;
+        margin-bottom: 20px;
+
+        &:nth-of-type(3n) {
+            margin-right: 0;
+        }
+
+        .thumb {
+            overflow: hidden;
+            height: 160px;
+
+            img {
+                object-fit: cover;
+                border-radius: 5px;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                border: 1px solid #f6f6f6;
+
+                &:hover {
+                    transition: transform 0.3s ease;
+                    transform: scale(1.1) rotate(-1.3deg);
+                }
+            }
+        }
+
+        .content {
+            margin-top: 10px;
+
+            a {
+                color: #333;
+                font-weight: 600;
+                font-size: 16px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.item-view .blog-posts,
+.content>.row .sidebar .widget,
+.post-count-cmt {
+    border-top-color: $maincolor;
+}
+
+.lb a,
+.post-body a:not(.btn)[rel="nofollow"] {
+    color: $maincolor;
+    font-weight: 600
+}
+
+.footer .top-footer {
+    border-bottom-color: $maincolor;
+}
+
+.header #header .nav li a:hover,
+.PopularPosts .custom-popular .post .post-info .post-title a:hover,
+.content>.row .sidebar .PopularPosts .thumbnail h3.post-title a:hover,
+.rc-user a:hover,
+.post-comment .rc-item .rc-summary .rc-header .rc-author a:hover,
+.content>.row .main .posts .post-content .post-meta .meta-top .vcard a:hover,
+.content>.row .main .posts .post-content .post-meta .meta-title h2 a:hover,
+.open-btn:hover {
+    color: $maincolor;
+    transition: all .2s linear;
+}
+
+.header #header .nav li a:before {
+    background: $maincolor;
+}
+
+.queryNotNull {
+    border-left-color: $maincolor;
 }
