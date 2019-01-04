@@ -67,11 +67,11 @@ a {
     z-index: 100;
 
     &.off-canvas {
-        top: -93px;
-    }
-
-    &.fixed {
         top: 0;
+
+        &.fixed {
+            top: -93px;
+        }
     }
 
     .row {
@@ -193,7 +193,7 @@ a {
                 }
             }
 
-            &.latest-post {
+            &.lastest-post {
                 padding-bottom: 5px;
             }
         }
@@ -2432,42 +2432,6 @@ youtube div {
     }
 }
 
-.item-view .blog-posts,
-.content>.row .sidebar .widget,
-.post-count-cmt {
-    border-top-color: $maincolor;
-}
-
-.lb a,
-.post-body a:not(.btn)[rel="nofollow"] {
-    color: $maincolor;
-    font-weight: 600
-}
-
-.footer .top-footer {
-    border-bottom-color: $maincolor;
-}
-
-.header #header .nav li a:hover,
-.PopularPosts .custom-popular .post .post-info .post-title a:hover,
-.content>.row .sidebar .PopularPosts .thumbnail h3.post-title a:hover,
-.rc-user a:hover,
-.post-comment .rc-item .rc-summary .rc-header .rc-author a:hover,
-.content>.row .main .posts .post-content .post-meta .meta-top .vcard a:hover,
-.content>.row .main .posts .post-content .post-meta .meta-title h2 a:hover,
-.open-btn:hover {
-    color: $maincolor;
-    transition: all .2s linear;
-}
-
-.header #header .nav li a:before {
-    background: $maincolor;
-}
-
-.queryNotNull {
-    border-left-color: $maincolor;
-}
-
 .fb-avatar {
     width: 100px;
     height: 100px;
@@ -2482,8 +2446,8 @@ youtube div {
     .more-menu {
         display: none;
         position: absolute;
-        top: calc(150%);
-        left: 0;
+        top: -25px;
+        left: calc(100% + 18px);
         z-index: 100;
         background: #fff;
         width: 200px;
@@ -2494,10 +2458,10 @@ youtube div {
             content: "";
             display: inline-block;
             border-style: solid;
-            border-width: 11px;
-            border-color: transparent transparent #eee;
-            top: -23px;
-            left: 15px;
+            border-width: 9px 10px;
+            border-color: transparent #eee transparent transparent;
+            top: 28px;
+            left: -21px;
             z-index: 10;
         }
 
@@ -2506,10 +2470,10 @@ youtube div {
             content: "";
             display: inline-block;
             border-style: solid;
-            border-width: 11px;
-            border-color: transparent transparent #fff;
-            top: -22px;
-            left: 15px;
+            border-width: 9px 10px;
+            border-color: transparent #fff transparent transparent;
+            top: 28px;
+            left: -20px;
             z-index: 11;
         }
 
@@ -4678,6 +4642,156 @@ input {
     }
 }
 
+kbd {
+    position: relative;
+    top: -2px;
+    margin: 0 0.1em;
+    padding: 0.1em 0.6em;
+    border-radius: 3px;
+    border: 1px solid rgb(204, 204, 204);
+    color: rgb(51, 51, 51);
+    line-height: 1.4;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 2px #ffffff;
+    background-color: rgb(247, 247, 247);
+    text-shadow: 0 1px 0 #fff;
+}
+
+.stats>div {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    .total {
+        font-weight: 600;
+    }
+}
+
+.comments-thread>.toggle-cmt {
+    display: none;
+}
+
+.toggle-cmt {
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.comments-thread>.comment .comment-child .comment {
+    display: none;
+}
+
+.t-down {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    top: 7px;
+    fill: #888;
+}
+
+.t-up {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    top: 7px;
+    fill: #888;
+    display: none;
+}
+
+.toggle-lb {
+    &.active span {
+        &:nth-child(2) {
+            display: inline-block;
+        }
+
+        &:nth-child(1) {
+            display: none;
+        }
+    }
+
+    span:nth-child(2) {
+        display: none;
+    }
+}
+
+.related-center {
+    list-style: none;
+    margin-bottom: 8px;
+    margin-left: 30px;
+    position: relative;
+
+    &::before {
+        display: inline-block;
+        margin: 0 8px 0 0;
+        content: "";
+        width: 4px;
+        height: 4px;
+        background: #666;
+        top: 10px;
+        left: -13px;
+        position: absolute;
+    }
+
+    a {
+        color: #444;
+        font-weight: 400;
+
+        &:hover {
+            color: #d70f0f;
+        }
+    }
+
+    &:nth-last-of-type(1) {
+        margin-bottom: 20px;
+    }
+
+    &:nth-last-of-type(2n) {
+        display: none;
+    }
+}
+
+a[name="more"] {
+    display: inline-block;
+}
+
+.item-view .blog-posts,
+.content>.row .sidebar .widget,
+.post-count-cmt {
+    border-top-color: $maincolor;
+}
+
+.lb a,
+.post-body a:not(.btn)[rel="nofollow"] {
+    color: $maincolor;
+    font-weight: 600
+}
+
+.footer .top-footer {
+    border-bottom-color: $maincolor;
+}
+
+.header #header .nav li a:hover,
+.PopularPosts .custom-popular .post .post-info .post-title a:hover,
+.content>.row .sidebar .PopularPosts .thumbnail h3.post-title a:hover,
+.rc-user a:hover,
+.post-comment .rc-item .rc-summary .rc-header .rc-author a:hover,
+.content>.row .main .posts .post-content .post-meta .meta-top .vcard a:hover,
+.content>.row .main .posts .post-content .post-meta .meta-title h2 a:hover,
+.open-btn:hover {
+    color: $maincolor;
+    transition: all .2s linear;
+}
+
+.header #header .nav li a:before {
+    background: $maincolor;
+}
+
+.queryNotNull {
+    border-left-color: $maincolor;
+}
+
 /*! Responsive Design */
 
 @media (max-width: 1300px) {
@@ -4854,11 +4968,13 @@ input {
                     &:hover {
                         transform: scale(1.1);
                         transition-property: transform;
-                        transition-duration: 0.3s;
+                        transition-duration: 0.05s;
+                        transition-timing-function: linear;
 
                         label {
                             visibility: visible;
                             opacity: 1;
+                            transition: all 0s;
                         }
                     }
                 }
