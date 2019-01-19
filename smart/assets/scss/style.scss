@@ -12,7 +12,7 @@ img {
 body {
     animation: fadeInOpacity 2s;
     font-size: 16px;
-    font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: $dark-color;
     background-color: #f2f2f2;
     word-wrap: break-word;
@@ -1011,7 +1011,7 @@ youtube {
 
 .blog-admin .badge,
 .user .badge {
-    background-image: url(\/\/lh3.ggpht.com\/-Aw-fJGmrxKo\/W6uXMd5sbMI\/AAAAAAAAHpQ\/Ob8Jf8ExjYcz901FYOTOqL4EPHJX3ijPQCLcBGAs\/h0\/badge.png);
+    background-image: url(\/\/lh3.ggpht.com\/-30bHX6wegvE\/XDIfpf-Q8oI\/AAAAAAAAIoI\/vc9zMgrIIBokmurQ0j1MhphhA6BTCBjYACLcBGAs\/h0\/badge.png);
     background-size: auto;
     background-repeat: no-repeat;
     display: inline-block;
@@ -1022,12 +1022,23 @@ youtube {
 }
 
 .blog-admin .badge {
-    background-position: 0 -374px;
+    background-position: 0 0;
     top: 1px;
 }
 
 .user .badge {
-    background-position: 0 -400px;
+    background-position: 0 -168px;
+}
+
+.feed-view {
+    .user .badge {
+        top: 1px;
+    }
+
+    .blog-admin .badge,
+    .user .badge {
+        margin: 0 1px 0 6px;
+    }
 }
 
 .embed-container,
@@ -1178,24 +1189,28 @@ youtube {
         align-items: center;
     }
 
-    .post-nav a {
-        &:hover {
-            background: #f2f2f2;
-            transition: .3s ease;
-        }
+    .post-nav {
+        width: 150px;
 
-        font-size: 18px;
-        box-shadow: 2px 8px 15px -10px #c7c7c7;
-        background: #fff;
-        border-radius: 100%;
-        padding: 5px 12px;
-        font-weight: 700;
-        color: #333;
-        display: inline-block;
-        margin: 0 2px 0 2px;
+        a {
+            &:hover {
+                background: #f2f2f2;
+                transition: .3s ease;
+            }
 
-        &.home-nav {
-            padding: 5px 10px 7px;
+            font-size: 18px;
+            box-shadow: 2px 8px 15px -10px #c7c7c7;
+            background: #fff;
+            border-radius: 100%;
+            padding: 5px 12px;
+            font-weight: 700;
+            color: #333;
+            display: inline-block;
+            margin: 0 2px 0 2px;
+
+            &.home-nav {
+                padding: 5px 10px 7px;
+            }
         }
     }
 
@@ -1965,7 +1980,7 @@ youtube div {
     color: $dark-color;
     font-size: 15px;
     margin-right: 3px;
-    margin-bottom: 5px;
+    margin-bottom: 0;
     border-radius: 1px;
 }
 
@@ -2623,9 +2638,72 @@ youtube div {
     }
 }
 
+.comments-form {
+    border-bottom: 1px solid #f8f8f8;
+    margin-bottom: 10px;
+}
+
+.toggle-cmts,
+.t-down {
+    display: none;
+}
+
+.toggle-cmts {
+    margin-bottom: 15px;
+}
+
+.t-up {
+    display: inline-block;
+}
+
+.replied {
+    margin: 20px 0 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    img {
+        margin-right: 8px;
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+    }
+
+    .auth {
+        margin-right: 5px;
+        display: inline-block;
+        font-weight: 600;
+    }
+
+    .total-rep {
+        display: inline-block;
+        margin: 0 5px;
+        padding-left: 10px;
+        position: relative;
+        box-sizing: border-box;
+
+        &:before {
+            content: "";
+            position: absolute;
+            background: #888;
+            width: 3px;
+            height: 3px;
+            border-radius: 100%;
+            left: 0;
+            top: 50%;
+        }
+    }
+
+    .info {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
 .has-comment {
     border-bottom: 1px solid #f5f5f5;
-    margin-bottom: 0;
+    margin-bottom: 15px;
 }
 
 .group-btn>.item {
@@ -3002,6 +3080,7 @@ youtube div {
 .sort-comment {
     text-align: right;
     margin-bottom: 20px;
+    margin-top: 20px;
 
     .sort-title {
         font-size: 15px;
@@ -4191,7 +4270,7 @@ youtube div {
 
 
 .author-box .author-wrap {
-    align-items: flex-end;
+    align-items: center;
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
@@ -4253,6 +4332,19 @@ youtube div {
                 }
             }
         }
+    }
+}
+
+.author-box .author-wrap .author-header {
+    position: relative;
+
+    i {
+        position: absolute;
+        top: 62px;
+        right: 28px;
+        font-size: 19px;
+        color: #039BE5;
+        display: inline-block;
     }
 }
 
@@ -4656,7 +4748,7 @@ kbd {
     color: rgb(51, 51, 51);
     line-height: 1.4;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
     display: inline-block;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 2px #ffffff;
