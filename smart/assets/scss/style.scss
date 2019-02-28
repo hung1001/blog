@@ -867,7 +867,7 @@ youtube {
             padding: 5px 8px;
             border-radius: 100%;
             color: #fff;
-            background: #d70f0f;
+            background: $maincolor;
             top: -15px;
             z-index: 100;
             content: "\f10d";
@@ -897,7 +897,7 @@ youtube {
         box-shadow: 0 12px 35px -11px rgba(0, 0, 0, 0.4);
         padding: 20px;
         box-sizing: border-box;
-        border-top: 3px solid #d70f0f;
+        border-top: 3px solid $maincolor;
         border-left: 0;
         position: relative;
 
@@ -907,6 +907,7 @@ youtube {
 
 #comment-editor {
     min-height: 95px;
+    background: transparent url(\/\/cdn.jsdelivr.net\/gh\/hoanghung96cs\/blog\/svg\/loading.svg) center center no-repeat;
 }
 
 .comments-thread>.comment {
@@ -1011,8 +1012,8 @@ youtube {
 
 .blog-admin .badge,
 .user .badge {
-    background-image: url(\/\/lh3.ggpht.com\/-30bHX6wegvE\/XDIfpf-Q8oI\/AAAAAAAAIoI\/vc9zMgrIIBokmurQ0j1MhphhA6BTCBjYACLcBGAs\/h0\/badge.png);
-    background-size: auto;
+    background-image: url(\/\/lh3.ggpht.com\/-TikNXwvlck8\/XEht8ipLQoI\/AAAAAAAAIzg\/g50niJGKqnUM3Ehb6yeQal7gtMRBeAkjQCLcBGAs\/h0\/badge-24.png);
+    background-size: 12px;
     background-repeat: no-repeat;
     display: inline-block;
     height: 12px;
@@ -1027,7 +1028,7 @@ youtube {
 }
 
 .user .badge {
-    background-position: 0 -168px;
+    background-position: 0 -48px;
 }
 
 .feed-view {
@@ -1077,6 +1078,8 @@ youtube {
 
             img {
                 border-radius: 100%;
+                width: 50px;
+                height: 50px;
             }
         }
 
@@ -2200,7 +2203,7 @@ youtube div {
     }
 
     .bottom-footer {
-        margin: 15px 0 0;
+        margin: 5px 0 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -2537,7 +2540,7 @@ youtube div {
     position: absolute;
     right: 0;
     top: 3px;
-    color: #d70f0f;
+    color: $maincolor;
 }
 
 .FeaturedPost .star::after {
@@ -2633,8 +2636,20 @@ youtube div {
     cursor: pointer;
 
     &:hover {
-        color: #d70f0f;
+        color: $maincolor;
         transition: color 0.3s;
+    }
+}
+
+.feed-view {
+    .open-comment {
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+    .feed-comment {
+        padding: 0 35px;
+        background: transparent url(\/\/cdn.jsdelivr.net\/gh\/hoanghung96cs\/blog\/svg\/loading.svg) center center no-repeat;
     }
 }
 
@@ -2725,7 +2740,7 @@ youtube div {
 
         &:hover {
             text-decoration: none;
-            color: #d70f0f;
+            color: $maincolor;
         }
     }
 
@@ -3139,7 +3154,7 @@ youtube div {
         content: "";
         height: 2px;
         width: 100%;
-        background: #d70f0f;
+        background: $maincolor;
         left: 0;
         bottom: -3px;
     }
@@ -3530,7 +3545,7 @@ youtube div {
         cursor: pointer;
 
         &:hover {
-            color: #d70f0f;
+            color: $maincolor;
         }
     }
 }
@@ -3546,7 +3561,7 @@ youtube div {
         content: "";
         height: 35px;
         width: 3px;
-        background: #d70f0f;
+        background: $maincolor;
         left: -4px;
         top: 0;
     }
@@ -4835,7 +4850,7 @@ kbd {
         font-weight: 400;
 
         &:hover {
-            color: #d70f0f;
+            color: $maincolor;
         }
     }
 
@@ -4939,6 +4954,254 @@ a[name="more"] {
 .queryNotNull {
     border-left-color: $maincolor;
 }
+
+.img-right {
+    position: absolute;
+    top: 93px;
+    right: -20px;
+    z-index: 444;
+    width: 300px;
+}
+
+.img-left {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    z-index: 444;
+    width: 70px;
+}
+
+.content>.row .sidebar .PopularPosts {
+
+    article.post:nth-last-of-type(1),
+    div.post:nth-last-of-type(1) {
+        margin: 0 !important;
+    }
+}
+
+.sort-comment-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    .sort-comment {
+        margin: 0;
+    }
+
+    .cmt-count {
+        font-weight: 600;
+    }
+}
+
+.open-rule {
+    color: #000;
+}
+
+#rule {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    position: fixed;
+    visibility: hidden;
+    display: none;
+    background-color: rgba(22, 22, 22, 0.35);
+
+    &:target {
+        visibility: visible;
+        display: block;
+    }
+}
+
+.rule-inner {
+    max-height: 35em;
+    overflow: auto;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    max-width: 60%;
+    position: relative;
+    box-sizing: border-box;
+    padding: 20px 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+    .rule-title {
+        font-size: 20px;
+        font-weight: 600;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .rule-content p {
+        margin: 10px 0;
+    }
+
+    .close-rule {
+        text-align: right;
+        margin: 20px 0 8px;
+
+        a {
+            padding-bottom: 8px;
+        }
+    }
+}
+
+.my-info {
+    flex-wrap: wrap;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    margin: 20px 0 0;
+
+    a {
+        color: #fff;
+        opacity: 0.7;
+        display: inline-block;
+        margin-right: 15px;
+        font-weight: 400;
+
+        .fa-fw {
+            text-align: left;
+            margin-right: 2px;
+        }
+    }
+}
+
+.my-info strong {
+    color: #fff;
+    opacity: 0.7;
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.header-image-wrapper img {
+    width: 195px;
+    height: 35px;
+}
+
+
+.fbe-icon {
+    text-align: center;
+
+    svg {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.fbe-text {
+    text-align: center;
+    font-size: 17px;
+    color: #666;
+}
+
+.fbe {
+    form {
+        margin: {
+            top: 20px;
+        }
+
+        padding: 0;
+        border: 1px solid #ccc;
+        border-radius: 50px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            position: relative;
+            top: 7px;
+            left: 15px;
+            width: 20px;
+            height: 20px;
+            background: url("data:image/svg+xml,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z' fill='%23717171'></path></svg>") no-repeat;
+        }
+
+        .fbe-address {
+            border: 0;
+            outline: 0;
+            font-size: 15px;
+            width: calc(100% - 110px);
+            background: transparent;
+            display: block;
+            padding-bottom: 2px;
+        }
+
+        .fbe-submit {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: #008c5f;
+            box-sizing: border-box;
+            padding-top: 2px;
+            border: 0;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+        }
+    }
+
+    margin-bottom: 20px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ccc;
+}
+
+.fbe-social {
+    display: table;
+    max-width: 100%;
+    margin: auto;
+
+    a {
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover i {
+            transition: 0.3s ease;
+            transform: scale(1.2) translateY(-10px);
+        }
+
+        i {
+            text-align: center;
+            display: inline-block;
+            border-radius: 30px;
+            background: #ccc;
+            margin: 0 7px;
+            width: 35px;
+            line-height: 35px;
+            height: 35px;
+            color: #fff;
+            box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.4);
+
+            &.f-facebook {
+                background: #3b5998;
+            }
+
+            &.f-twitter {
+                background: #1da1f2;
+            }
+
+            &.f-linkedin {
+                background: #0077b5;
+            }
+
+            &.f-youtube {
+                background: #ff0000;
+            }
+
+            &.f-instagram {
+                background: #833ab4;
+            }
+        }
+    }
+}
+
 
 /*! Responsive Design */
 
@@ -5196,6 +5459,10 @@ a[name="more"] {
 }
 
 @media (max-width: 700px) {
+    .feed-view .open-comment {
+        display: none;
+    }
+
     .cmt-action {
         margin: 10px 0 0;
     }
