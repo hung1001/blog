@@ -1,28 +1,19 @@
 /*! Font */
 
 @font-face {
-    font-family: 'SegoeUI';
-    src: local("Segoe UI"),
-    url('#{$font-url}Normal/latest.woff2') format("woff2"),
-    url('#{$font-url}Normal/latest.woff') format("woff"),
-    url('#{$font-url}Normal/latest.ttf') format("ttf");
-    font-weight: 400;
+  font-family: 'SegoeUI';
+  font-weight: 400;
+  src: local("Segoe UI"), url("#{$font-url}Normal/latest.woff2") format("woff2"), url("#{$font-url}Normal/latest.woff") format("woff"), url("#{$font-url}Normal/latest.ttf") format("ttf");
 }
 
 @font-face {
-    font-family: 'SegoeUI';
-    src: local("Segoe UI"),
-    url('#{$font-url}Semibold/latest.woff2') format("woff2"),
-    url('#{$font-url}Semibold/latest.woff') format("woff"),
-    url('#{$font-url}Semibold/latest.ttf') format("ttf");
-    font-weight: 600;
+  font-family: 'SegoeUI';
+  font-weight: 600;
+  src: local("Segoe UI"), url("#{$font-url}Semibold/latest.woff2") format("woff2"), url("#{$font-url}Semibold/latest.woff") format("woff"), url("#{$font-url}Semibold/latest.ttf") format("ttf");
 }
 
 @font-face {
-    font-family: 'SegoeUI';
-    src: local("Segoe UI"),
-    url('#{$font-url}Bold/latest.woff2') format("woff2"),
-    url('#{$font-url}Bold/latest.woff') format("woff"),
-    url('#{$font-url}Bold/latest.ttf') format("ttf");
-    font-weight: 700;
+  font-family: 'SegoeUI';
+  font-weight: 700;
+  src: local("Segoe UI"), url("#{$font-url}Bold/latest.woff2") format("woff2"), url("#{$font-url}Bold/latest.woff") format("woff"), url("#{$font-url}Bold/latest.ttf") format("ttf");
 }
